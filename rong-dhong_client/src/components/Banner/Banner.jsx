@@ -23,7 +23,15 @@ const Banner = () => {
         };
 
         fetchBanners();
-    }, []);
+
+        // Auto slide the banner every 5 seconds
+        const intervalId = setInterval(() => {
+            goToNextSlide();
+        }, 5000);
+
+        // Clear the interval when the component is unmounted
+        return () => clearInterval(intervalId);
+    }, [currentIndex, banners.length]);
 
     const goToNextSlide = () => {
         const newIndex = currentIndex === banners.length - 1 ? 0 : currentIndex + 1;

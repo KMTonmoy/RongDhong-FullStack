@@ -2,13 +2,22 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { IoCartOutline } from "react-icons/io5";
-import { AiOutlineLogin } from "react-icons/ai";  // New icon for login
+import { AiOutlineLogin } from "react-icons/ai";
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Shop", path: "/shop" },
+    { name: "BECOME A SELLER", path: "/becomeaSeller" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
     <motion.nav
@@ -18,7 +27,6 @@ const Navbar = () => {
       className="bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg sticky top-0 z-50"
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.1 }}
           className="text-3xl font-extrabold cursor-pointer tracking-widest text-white"
@@ -26,25 +34,24 @@ const Navbar = () => {
           রংঢংফ্যাশান
         </motion.div>
 
-        {/* Desktop Menu */}
         <motion.ul
           className="hidden md:flex space-x-8 text-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          {["Home", "Shop", "Services", "About", "Contact"].map((item, index) => (
-            <motion.li
-              key={index}
-              whileHover={{ scale: 1.1 }}
-              className="cursor-pointer hover:text-yellow-400 transition-all duration-200"
-            >
-              {item}
-            </motion.li>
+          {navLinks.map((item, index) => (
+            <Link href={item.path} key={index}>
+              <motion.li
+                whileHover={{ scale: 1.1 }}
+                className="cursor-pointer hover:text-yellow-400 transition-all duration-200"
+              >
+                {item.name}
+              </motion.li>
+            </Link>
           ))}
         </motion.ul>
 
-        {/* Desktop Right Side: Login and Cart */}
         <div className="hidden md:flex items-center space-x-6">
           <motion.button
             className="bg-white rounded-xl text-purple-500 hover:bg-purple-200 hover:text-white px-6 py-3  first-line: shadow-lg transition-all duration-300 transform hover:scale-110"
@@ -64,7 +71,6 @@ const Navbar = () => {
           </motion.div>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
@@ -86,7 +92,6 @@ const Navbar = () => {
             </svg>
           </button>
 
-          {/* Mobile Menu */}
           {isMenuOpen && (
             <motion.div
               className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg text-black"
@@ -94,13 +99,13 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              {["Home", "Shop", "Services", "About", "Contact"].map((item, index) => (
+              {navLinks.map((item, index) => (
                 <motion.div
                   key={index}
                   className="p-3 hover:bg-purple-200 cursor-pointer transition-all duration-200"
                   whileHover={{ scale: 1.05 }}
                 >
-                  {item}
+                  {item.name}
                 </motion.div>
               ))}
               <motion.div

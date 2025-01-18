@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "name": "Shoes",
+        "image": "https://image.made-in-china.com/2f0j00TEdoAIsFSycH/Kids-Shoes-Fashion-Pricess-Shoes-Dress-Shoes-Children-Footwear-Girls-Casual-Shoes-New.webp"
+    },
+    {
+        "id": 2,
+        "name": "Cosmetics",
+        "image": "https://static.vecteezy.com/system/resources/previews/028/099/987/large_2x/beauty-cosmetic-makeup-product-brushes-lipstick-nail-polish-collection-on-white-background-generative-ai-free-photo.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Clothes",
+        "image": "https://hulaglobal.com/wp-content/uploads/2022/08/Hula-global-fashion-summer-guide.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Lehenga",
+        "image": "https://5.imimg.com/data5/ECOM/Default/2024/1/377131521/AY/XN/SD/153990963/img-20231224-wa0011-500x500.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Jewelry",
+        "image": "https://alberthern.com/cdn/shop/articles/Classic_Jewelry_1200x1200.jpg?v=1707701427"
+    },
+    {
+        "id": 6,
+        "name": "Handbags",
+        "image": "https://img.drz.lazcdn.com/static/bd/p/d78557decf882997f9c91b987ab382d5.jpg_720x720q80.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Watches",
+        "image": "https://img.drz.lazcdn.com/static/bd/p/b257620454ba033b9a26a78358504075.jpg_720x720q80.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Toys",
+        "image": "https://images-cdn.ubuy.co.in/63d6fc756bf1fc5a16517764-toys-for-3-year-old-boys-girls-kids.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Accessories",
+        "image": "https://bournecrisp.com.au/wp-content/uploads/2019/07/accessories-make-or-break-1100x733.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Perfumes",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEFGsnchuvCxGKduomLELMCDYocOqWsjh6AA&s"
+    },
+    {
+        "id": 12,
+        "name": "Sunglasses",
+        "image": "https://img.drz.lazcdn.com/static/bd/p/f612727fc1eb2297d46c27ad371cf08a.jpg_720x720q80.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Hats",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLVZu8dkMFSS90QJRJEYLA2kjP5V9M0mqZw&s"
+    },
+    {
+        "id": 14,
+        "name": "Footwear",
+        "image": "https://walkarfootwear.com/images/promo/166/Design-02---750pxx400px.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Bags",
+        "image": "https://m.media-amazon.com/images/I/61UDx9jF0mL._AC_SL1315_.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Baby Dresses",
+        "image": "https://images.othoba.com/images/thumbs/0634280_ac-net-baby-pori-parti-dress-bd-40.webp"
+    }
+]

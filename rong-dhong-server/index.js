@@ -29,6 +29,8 @@ async function run() {
 
     const usersCollection = client.db("MediDetail").collection("users");
     const bannersCollection = client.db("RongDhong").collection("banners");
+    const productsCollection = client.db("RongDhong").collection("products");
+    const categoriesCollection = client.db("RongDhong").collection("categories");
 
     app.get("/users", async (req, res) => {
       const users = await usersCollection.find().toArray();
@@ -215,6 +217,22 @@ async function run() {
         res.status(500).send({ message: "Error deleting banner" });
       }
     });
+
+
+
+    app.get("/products", async (req, res) => {
+      const products = await productsCollection.find().toArray();
+      res.send(products);
+    });
+    app.get("/categorysList", async (req, res) => {
+      const categories = await categoriesCollection.find().toArray();
+      res.send(categories);
+    });
+
+
+
+
+
 
 
 

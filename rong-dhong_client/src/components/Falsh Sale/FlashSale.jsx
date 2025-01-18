@@ -1,23 +1,40 @@
-import React from 'react';
-import { TbCurrencyTaka } from "react-icons/tb";
+'use client'
+import React, { useState, useEffect } from 'react';
 import Heading from '../Heading/Heading';
 
 const FlashSale = () => {
-    const products = [
-        { id: 1, name: "Product 1", price: "200", image: "https://5.imimg.com/data5/SELLER/Default/2023/8/338605749/MI/RH/RZ/8062019/whatsapp-image-2023-08-28-at-11-09-16-am-500x500.jpeg" },
-        { id: 2, name: "Product 2", price: "300", image: "https://teddybearbd.com/uploads/2024/09/1726299359.webp" },
-        { id: 3, name: "Product 3", price: "250", image: "https://pride-limited.com/storage/app/public/pgallery/958_product_image_1_medium_27.jpg" },
-    ];
+    const [products, setProducts] = useState([]);
+    const [visibleProductsCount, setVisibleProductsCount] = useState(3);
+
+    useEffect(() => {
+        fetch('http://localhost:8000/products')
+            .then((response) => response.json())
+            .then((data) => {
+                const flashSaleProducts = data.filter(product => product.priority === 'flash');
+                setProducts(flashSaleProducts);
+            })
+            .catch((error) => {
+                console.error('Error fetching products:', error);
+            });
+    }, []);
+
+    const handleLoadMore = () => {
+        setVisibleProductsCount(prevCount => prevCount + 6);
+    };
+
+    const handleShowLess = () => {
+        setVisibleProductsCount(3);
+    };
 
     return (
         <div className="py-10">
-            <div className="container  mx-auto px-6">
+            <div className="container mx-auto px-6">
                 {/* Heading for Flash Sale */}
                 <Heading text="Flash Sale" />
 
                 {/* Product Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    {products.map((product) => (
+                    {products.slice(0, visibleProductsCount).map((product) => (
                         <div key={product.id} className="relative group bg-white rounded-xl shadow-lg overflow-hidden w-full mx-auto">
                             {/* Product Image */}
                             <img
@@ -35,6 +52,25 @@ const FlashSale = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* Load More / Show Less Button */}
+                <div className="flex justify-center mt-6">
+                    {visibleProductsCount < products.length ? (
+                        <button
+                            onClick={handleLoadMore}
+                            className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition duration-300"
+                        >
+                            Load More
+                        </button>
+                    ) : (
+                        <button
+                            onClick={handleShowLess}
+                            className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition duration-300"
+                        >
+                            Show Less
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
