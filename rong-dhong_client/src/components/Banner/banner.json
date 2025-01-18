@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "imageUrl": "https://img.lazcdn.com/us/domino/92f5ed25-8d9a-4a65-b985-a3e27b650893_BD-1976-688.jpg_2200x2200q80.jpg",
+        "title": "Spring Sale",
+        "description": "Get up to 50% off on our new arrivals!"
+    },
+    {
+        "id": 2,
+        "imageUrl": "https://img.lazcdn.com/us/domino/3e535b33-57d7-429a-80ff-eeb71558b693_BD-1976-688.jpg_2200x2200q80.jpg",
+        "title": "Winter Collection",
+        "description": "Explore the latest trends in our winter collection."
+    },
+    {
+        "id": 3,
+        "imageUrl": "https://img.lazcdn.com/us/domino/257d3461-f647-47d9-9bcf-f871afdae9bd_BD-1976-688.jpg_2200x2200q80.jpg",
+        "title": "Flash Deals",
+        "description": "Limited time offers on your favorite items."
+    }
+]
+
+
+
+// rongdhongTonmoy152
